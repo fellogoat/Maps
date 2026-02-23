@@ -40,7 +40,7 @@
             background: none; 
             border: none; 
             color: #ffffff; 
-            padding: 20px 40px; 
+            padding: 20px 30px; 
             cursor: pointer; 
             font-size: 16px; 
             font-weight: bold; 
@@ -74,11 +74,11 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Mapping Gallery Card */
-        .map-card { 
+        /* Mapping Gallery & Contact Card */
+        .map-card, .contact-card { 
             background: #1a1a1a; 
             border: 1px solid #333; 
-            padding: 25px; 
+            padding: 40px 25px; 
             border-radius: 15px; 
             margin-top: 30px;
             transition: transform 0.3s;
@@ -93,7 +93,29 @@
             margin-bottom: 20px;
         }
 
-        .map-card h3 { color: #ff0000; margin-top: 0; }
+        .map-card h3, .contact-card h3 { color: #ff0000; margin-top: 0; margin-bottom: 30px; font-size: 1.8em; }
+
+        /* Contact Buttons */
+        .contact-btn {
+            display: block;
+            margin: 15px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 400px;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .whatsapp-btn { background: #25D366; }
+        .whatsapp-btn:hover { background: #1ebe57; transform: translateY(-3px); }
+
+        .email-btn { background: #ff0000; }
+        .email-btn:hover { background: #b30000; transform: translateY(-3px); }
 
         /* Footer */
         footer { 
@@ -117,6 +139,7 @@
 <nav>
     <button class="tab-btn active" onclick="openTab(event, 'about')">ABOUT ME</button>
     <button class="tab-btn" onclick="openTab(event, 'maps')">MY MAPS</button>
+    <button class="tab-btn" onclick="openTab(event, 'contact')">CONTACT US</button>
 </nav>
 
 <div id="about" class="content active-content">
@@ -139,9 +162,25 @@
     </div>
 </div>
 
+<div id="contact" class="content">
+    <div class="contact-card">
+        <h3>GET IN TOUCH</h3>
+        
+        <a href="https://wa.me/212726184798" class="contact-btn whatsapp-btn">
+            CHAT ON WHATSAPP
+        </a>
+
+        <a href="mailto:fellomapper@gmail.com" class="contact-btn email-btn">
+            SEND AN EMAIL
+        </a>
+        
+        <p style="margin-top: 30px; color: #888; font-style: italic;">Available for custom mapping requests and server projects.</p>
+    </div>
+</div>
+
 <footer>
-    <p>&copy; 2026 Fello Mapper | Powred by github</p>
-    <p style="font-size: 10px;">Powered by GitHub Pages</p>
+    <p>&copy; 2026 Fello Mapper | Powered by GitHub</p>
+    <p style="font-size: 10px;">Hosted on GitHub Pages</p>
 </footer>
 
 <script>
