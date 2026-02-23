@@ -1,205 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fello Mapper | Official Portfolio</title>
-    <style>
-        /* Dark Theme Style */
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background-color: #0f0f0f; 
-            color: #ffffff; 
-            margin: 0; 
-            padding: 0;
-            text-align: center; 
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fello Company</title>
 
-        /* Header with Red Border like Soprano Style */
-        header { 
-            background: #000000; 
-            padding: 40px 20px; 
-            border-bottom: 4px solid #ff0000; 
-            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
-        }
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#0f0f0f;
+    color:white;
+    scroll-behavior:smooth;
+}
 
-        header h1 { margin: 0; font-size: 2.5em; letter-spacing: 3px; }
-        header p { margin: 10px 0 0; color: #aaaaaa; font-style: italic; }
+nav{
+    background:#ff0000;
+    padding:15px;
+    text-align:center;
+}
 
-        /* Navigation Tabs */
-        nav { 
-            display: flex; 
-            justify-content: center; 
-            background: #1a1a1a; 
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
 
-        .tab-btn { 
-            background: none; 
-            border: none; 
-            color: #ffffff; 
-            padding: 20px 30px; 
-            cursor: pointer; 
-            font-size: 16px; 
-            font-weight: bold; 
-            transition: 0.3s;
-            border-bottom: 3px solid transparent;
-        }
+nav a:hover{
+    color:black;
+}
 
-        .tab-btn:hover { color: #ff0000; }
-        .tab-btn.active { 
-            color: #ff0000; 
-            border-bottom: 3px solid #ff0000; 
-            background: rgba(255, 0, 0, 0.05);
-        }
+section{
+    padding:60px 20px;
+    text-align:center;
+    min-height:100vh;
+}
 
-        /* Content Sections */
-        .content { 
-            display: none; 
-            padding: 60px 20px; 
-            max-width: 900px; 
-            margin: auto; 
-            line-height: 1.6;
-        }
+h1{
+    color:#ff0000;
+}
 
-        .active-content { 
-            display: block; 
-            animation: slideUp 0.5s ease-out; 
-        }
+.card{
+    background:#1c1c1c;
+    margin:15px auto;
+    padding:20px;
+    width:90%;
+    max-width:400px;
+    border-radius:10px;
+}
 
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+.price{
+    color:#ff0000;
+    font-weight:bold;
+}
 
-        /* Mapping Gallery & Contact Card */
-        .map-card, .contact-card { 
-            background: #1a1a1a; 
-            border: 1px solid #333; 
-            padding: 40px 25px; 
-            border-radius: 15px; 
-            margin-top: 30px;
-            transition: transform 0.3s;
-        }
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:#ff0000;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
 
-        .map-card:hover { transform: scale(1.02); }
+.btn:hover{
+    background:#cc0000;
+}
 
-        .map-card img { 
-            width: 100%; 
-            border-radius: 10px; 
-            border: 2px solid #ff0000;
-            margin-bottom: 20px;
-        }
+footer{
+    background:#111;
+    padding:15px;
+    text-align:center;
+    font-size:14px;
+}
+</style>
 
-        .map-card h3, .contact-card h3 { color: #ff0000; margin-top: 0; margin-bottom: 30px; font-size: 1.8em; }
-
-        /* Contact Buttons */
-        .contact-btn {
-            display: block;
-            margin: 15px auto;
-            padding: 20px;
-            width: 80%;
-            max-width: 400px;
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-            font-size: 1.2em;
-            transition: 0.3s;
-            border: 2px solid transparent;
-        }
-
-        .whatsapp-btn { background: #25D366; }
-        .whatsapp-btn:hover { background: #1ebe57; transform: translateY(-3px); }
-
-        .email-btn { background: #ff0000; }
-        .email-btn:hover { background: #b30000; transform: translateY(-3px); }
-
-        /* Footer */
-        footer { 
-            background: #000;
-            padding: 30px; 
-            color: #666; 
-            font-size: 14px; 
-            margin-top: 100px;
-        }
-
-        b { color: #ff0000; }
-    </style>
 </head>
 <body>
 
-<header>
-    <h1>FELLO MAPPER</h1>
-    <p>Professional SAMP Environment Designer & Developer</p>
-</header>
-
+<!-- NAVIGATION -->
 <nav>
-    <button class="tab-btn active" onclick="openTab(event, 'about')">ABOUT ME</button>
-    <button class="tab-btn" onclick="openTab(event, 'maps')">MY MAPS</button>
-    <button class="tab-btn" onclick="openTab(event, 'contact')">CONTACT US</button>
+    <a href="#home">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
 </nav>
 
-<div id="about" class="content active-content">
-    <h2 style="font-size: 2em;">Who is <span style="color: #ff0000;">Fello</span>?</h2>
-    <p style="font-size: 1.2em; color: #cccccc;">
-        I am <b>Fello</b>, a dedicated <b>SAMP Mapper</b> and developer with years of experience in creating high-quality virtual environments. 
-        I specialize in crafting custom interiors, detailed exterior re-designs, and specialized faction bases that provide players with a unique roleplay experience.
+<!-- PAGE 1 -->
+<section id="home">
+    <h1>Fello Company</h1>
+    <p>
+        Welcome to Fello Company 💼  
+        We specialize in creating and developing professional Discord Bots.  
+        We provide high-quality services at affordable prices.
     </p>
-    <p style="font-size: 1.1em; color: #aaaaaa;">
-        Using advanced tools like <b>Texture Studio</b> and <b>Pawn scripting</b>, I ensure that every project is not only beautiful but also optimized for server performance.
-    </p>
-</div>
+</section>
 
-<div id="maps" class="content">
-    <h2>Project Showcase</h2>
-    <div class="map-card">
-        <h3>Pizza Store & Street Project</h3>
-        <img src="Picsart_26-02-22_23-02-32-971.jpg" alt="Fello Pizza Mapping">
-        <p>A complete overhaul of the Pizza area, featuring custom textures, realistic object placement, and optimized lighting for <b>Samp maroc</b>.</p>
+<!-- PAGE 2 -->
+<section id="projects">
+    <h1>Discord Projects</h1>
+
+    <div class="card">
+        Simple Discord Bot  
+        <div class="price">15dh</div>
     </div>
-</div>
 
-<div id="contact" class="content">
-    <div class="contact-card">
-        <h3>GET IN TOUCH</h3>
-        
-        <a href="https://wa.me/212726184798" class="contact-btn whatsapp-btn">
-            CHAT ON WHATSAPP
-        </a>
-
-        <a href="mailto:fellomapper@gmail.com" class="contact-btn email-btn">
-            SEND AN EMAIL
-        </a>
-        
-        <p style="margin-top: 30px; color: #888; font-style: italic;">Available for custom mapping requests and server projects.</p>
+    <div class="card">
+        Project Bot Shop  
+        <div class="price">20dh</div>
     </div>
-</div>
+
+    <div class="card">
+        Casino Bot  
+        <div class="price">25dh</div>
+    </div>
+
+    <div class="card">
+        Games Bot  
+        <div class="price">30dh</div>
+    </div>
+</section>
+
+<!-- PAGE 3 -->
+<section id="contact">
+    <h1>Contact Us</h1>
+
+    <p>📱 WhatsApp: +212 726-184798</p>
+    <p>📧 Gmail: fellomapper@gmail.com</p>
+
+    <a href="https://wa.me/212726184798" class="btn">Message us on WhatsApp</a>
+    <br><br>
+    <a href="mailto:fellomapper@gmail.com" class="btn">Send Email</a>
+</section>
 
 <footer>
-    <p>&copy; 2026 Fello Mapper | Powered by GitHub</p>
-    <p style="font-size: 10px;">Hosted on GitHub Pages</p>
+    © 2026 Fello Company - All Rights Reserved
 </footer>
-
-<script>
-    function openTab(evt, tabName) {
-        var i, content, tablinks;
-        content = document.getElementsByClassName("content");
-        for (i = 0; i < content.length; i++) {
-            content[i].style.display = "none";
-            content[i].classList.remove("active-content");
-        }
-        tablinks = document.getElementsByClassName("tab-btn");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(tabName).style.display = "block";
-        document.getElementById(tabName).classList.add("active-content");
-        evt.currentTarget.className += " active";
-    }
-</script>
 
 </body>
 </html>
